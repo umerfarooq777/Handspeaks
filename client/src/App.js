@@ -8,7 +8,7 @@
 
 
 
-import React, {useRef} from 'react';
+import React, {useRef,useState} from 'react';
 import * as tf from "@tensorflow/tfjs";
 import * as handpose from "@tensorflow-models/handpose";
 import Webcam from "react-webcam";
@@ -18,6 +18,8 @@ import { drawHand } from './utility';
 import './App.css';
 
 function App() {
+const [detection,setDetection] = useState(false);
+const [mode,setMode] = useState("mode-1");
 
 const webcamRef = useRef(null);
 const canvasRef = useRef(null);
@@ -28,11 +30,24 @@ const canvasRef = useRef(null);
       console.log('Handpose model loaded. ');
       //Detects hand in loop
 
-      setInterval( ()=>{
-        detect(net)
-      }, 100  )
+      // setInterval( ()=>{
+      //   detect(net)
+      //   }, 200  )
 
       }; 
+
+
+
+      // const changeMode = ()=>
+      // {
+      //   if(mode!=="mode-0"){
+      //     setMode("mode-0")
+
+      //   }else{
+      //     setMode("mode-1")
+      //   }
+      
+      // };
       
 
 
@@ -62,12 +77,13 @@ const canvasRef = useRef(null);
 
         //detect hands
         const hand = await net.estimateHands(video);
-        console.log(hand);
-
+        // console.log(hand);
+        // console.log("ok");
+        
 
         //draw mesh
-        // const ctx = canvasRef.current.getContext("2d");
-        // drawHand(hand, ctx);
+        const ctx = canvasRef.current.getContext("2d");
+        drawHand(hand, ctx);
 
           }
 
@@ -79,37 +95,40 @@ const canvasRef = useRef(null);
   return (
     <div className="App">
       <header className="App-header">
+        <div className='container'>
 
-        <Webcam ref={webcamRef} 
-        style={{
-          position:"absolute",
-          marginLeft:"auto",
-          marginRight:"auto",
-          left:0,
-          right:0,
-          textAlign:"center",
-          zIndex:12,
-          width:1000,
-          height:400,
-          border: '1px solid blue'
-        }}/>
+        <Webcam ref={webcamRef} className={`webcam ${mode}`}
+        // style={{
+        //   position:"absolute",
+        //   marginLeft:"auto",
+        //   marginRight:"auto",
+        //   left:0,
+        //   right:0,
+        //   textAlign:"center",
+        //   zIndex:10,
+        //   width:890,
+        //   height:600,
+        //   border: '1px solid blue'
+        // }}
+        />
 
         <canvas
-        ref={canvasRef} 
-        style={{
-          position:"absolute",
-          marginLeft:"auto",
-          marginRight:"auto",
-          left:0,
-          right:0,
-          textAlign:"center",
-          zIndex:10,
-          width:1000,
-          height:400,
-          border: '1px solid red'
-        }}
+        ref={canvasRef} className={`canvas ${mode}`}
+        // style={{
+        //   position:"absolute",
+        //   marginLeft:"auto",
+        //   marginRight:"auto",
+        //   left:0,
+        //   right:0,
+        //   textAlign:"center",
+        //   zIndex:10,
+        //   width:800,
+        //   height:600,
+        //   border: '1px solid red'
+        // }}
           />
 
+        </div>
       </header>
     </div>
   );

@@ -1,3 +1,61 @@
+.webcam{
+  position: absolute;
+  height: 80%;
+  margin: 2rem auto 0 auto;
+  width: auto;
+  /* border: 3px dashed rgb(3, 207, 54); */
+}
+.mode-1{
+  border: 2px solid rgb(3, 207, 54);
+}
+.mode-0{
+  border: 2px solid rgb(214, 57, 9);
+}
+
+.canvas{
+  position: absolute;
+  z-index: 5;
+  height:82%;
+  margin: 2rem auto 0 auto;
+  width: auto;
+  /* border: 3px solid rgb(214, 57, 9); */
+}
+
+.container{
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: pink;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .App {
   text-align: center;
 }
@@ -15,24 +73,11 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

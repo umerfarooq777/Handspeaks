@@ -14,18 +14,21 @@
                 for (let i=0; i < landmarks.length;i++) {
 
                 // Get x point
-                const x = landmarks[1][0];
+                const x = landmarks[i][0];
 
                 // Get y point
-                const y = landmarks(1)[1];
+                const y = landmarks[i][1];
 
                 // Start drawing
                 ctx.beginPath();
                 ctx.arc(x, y, 5, 0, 3 * Math.PI);
 
                 // Set line color.
-                ctx.fillstyle="indigo";
+                ctx.fillStyle="#31c400";                                
+                ctx.shadowBlur = 5;
+                ctx.shadowColor = "#FFF";
                 ctx.fill(); 
+
             }
             });
         }
