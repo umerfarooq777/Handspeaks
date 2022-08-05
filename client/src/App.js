@@ -30,9 +30,9 @@ const canvasRef = useRef(null);
       console.log('Handpose model loaded. ');
       //Detects hand in loop
 
-      // setInterval( ()=>{
-      //   detect(net)
-      //   }, 200  )
+      setInterval( ()=>{
+        detect(net)
+        }, 100  )
 
       }; 
 
@@ -96,7 +96,7 @@ const canvasRef = useRef(null);
     <div className="App">
       <header className="App-header">
         <div className='container'>
-
+<h1 className='heading'>I'm Ironman</h1>
         <Webcam ref={webcamRef} className={`webcam ${mode}`}
         // style={{
         //   position:"absolute",
