@@ -12,7 +12,7 @@ import React, {useRef} from 'react';
 import * as tf from "@tensorflow/tfjs";
 import * as handpose from "@tensorflow-models/handpose";
 import Webcam from "react-webcam";
-
+import { drawHand } from './utility';
 
 //import logo from './logo.svg';
 import './App.css';
@@ -28,9 +28,9 @@ const canvasRef = useRef(null);
       console.log('Handpose model loaded. ');
       //Detects hand in loop
 
-      // setInterval( ()=>{
-      //   detect(net)
-      // }, 108  )
+      setInterval( ()=>{
+        detect(net)
+      }, 100  )
 
       }; 
       
@@ -66,6 +66,9 @@ const canvasRef = useRef(null);
 
 
         //draw mesh
+        // const ctx = canvasRef.current.getContext("2d");
+        // drawHand(hand, ctx);
+
           }
 
       }
