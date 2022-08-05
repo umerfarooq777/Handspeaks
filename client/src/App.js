@@ -1,3 +1,8 @@
+//Created App
+//Install dependencies ====npm install @tensorflow/tfjs @tensorflow-models/handpose react-webcam
+
+
+
 import logo from './logo.svg';
 import './App.css';
 
