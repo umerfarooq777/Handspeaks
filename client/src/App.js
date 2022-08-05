@@ -3,6 +3,8 @@
 //Import dependencies =====DONE
 //setup webcam ===== DONE
 // Define Refrences =====DONE
+//Handpose model loaded ====DONE
+
 
 import React, {useRef} from 'react';
 import * as tf from "@tensorflow/tfjs";
@@ -18,6 +20,11 @@ function App() {
 const webcamRef = useRef(null);
 const canvasRef = useRef(null);
 
+const runHandpose = async ()=>{
+const net = await handpose.load()
+console.log('Handpose model loaded. ')
+}
+runHandpose();
 
 
 
