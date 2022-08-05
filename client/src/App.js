@@ -4,6 +4,8 @@
 //setup webcam ===== DONE
 // Define Refrences =====DONE
 //Handpose model loaded ====DONE
+//Detection Hand =====DONE
+
 
 
 import React, {useRef} from 'react';
@@ -20,15 +22,56 @@ function App() {
 const webcamRef = useRef(null);
 const canvasRef = useRef(null);
 
-const runHandpose = async ()=>{
-const net = await handpose.load()
-console.log('Handpose model loaded. ')
-}
-runHandpose();
+      const runHandpose = async()=>
+      {
+      const net = await handpose.load()
+      console.log('Handpose model loaded. ');
+      //Detects hand in loop
+
+      // setInterval( ()=>{
+      //   detect(net)
+      // }, 108  )
+
+      }; 
+      
 
 
+      const detect = async(net)=>{
+        //Data availibility
+
+        if(
+          typeof webcamRef.current !== "undefined" && 
+          webcamRef.current !== null &&
+          webcamRef.current.video.readyState === 4
+        ){
+           
+        //get video properties
+        const video = webcamRef.current.video;
+        const videoWidth = webcamRef.current.video.videoWidth;
+        const videoHeight = webcamRef.current.video.videoHeight;
 
 
+        //set video height and width
+        webcamRef.current.video.width = videoWidth;
+        webcamRef.current.video.height = videoHeight; 
+
+
+        //set canvas height and width
+        canvasRef.current.width = videoWidth;
+        canvasRef.current.height = videoHeight;
+
+        //detect hands
+        const hand = await net.estimateHands(video);
+        console.log(hand);
+
+
+        //draw mesh
+          }
+
+      }
+
+    
+      runHandpose();
 
   return (
     <div className="App">
@@ -44,7 +87,7 @@ runHandpose();
           textAlign:"center",
           zIndex:12,
           width:1000,
-          height:650,
+          height:400,
           border: '1px solid blue'
         }}/>
 
@@ -58,8 +101,8 @@ runHandpose();
           right:0,
           textAlign:"center",
           zIndex:10,
-          width:1100,
-          height:650,
+          width:1000,
+          height:400,
           border: '1px solid red'
         }}
           />
