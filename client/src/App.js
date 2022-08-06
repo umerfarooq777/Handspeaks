@@ -94,42 +94,14 @@ const canvasRef = useRef(null);
 
   return (
     <div className="App">
-      <header className="App-header">
-        <div className='container'>
-<h1 className='heading'>I'm Ironman</h1>
-        <Webcam ref={webcamRef} className={`webcam ${mode}`}
-        // style={{
-        //   position:"absolute",
-        //   marginLeft:"auto",
-        //   marginRight:"auto",
-        //   left:0,
-        //   right:0,
-        //   textAlign:"center",
-        //   zIndex:10,
-        //   width:890,
-        //   height:600,
-        //   border: '1px solid blue'
-        // }}
-        />
+      <div className='container'>
 
-        <canvas
-        ref={canvasRef} className={`canvas ${mode}`}
-        // style={{
-        //   position:"absolute",
-        //   marginLeft:"auto",
-        //   marginRight:"auto",
-        //   left:0,
-        //   right:0,
-        //   textAlign:"center",
-        //   zIndex:10,
-        //   width:800,
-        //   height:600,
-        //   border: '1px solid red'
-        // }}
-          />
+        <h1 className='heading'>I'm Ironman</h1>
+        <Webcam ref={webcamRef} className={`webcam ${mode}`} />
+        <canvas ref={canvasRef} className={`canvas ${mode}`}/>
 
-        </div>
-      </header>
+
+        </div>      
     </div>
   );
 }

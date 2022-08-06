@@ -1,3 +1,23 @@
+
+import React, {useRef,useState} from 'react';
+
+// const changeMode = ()=>{    
+
+// const [detection,setDetection] = useState(false);
+
+
+//         if(mode!=="mode-0"){
+//           // setMode("mode-0")
+
+//         }else{
+//           // setMode("mode-1")
+//         }
+        
+      
+//       };
+
+
+
 // Points for fingers
 const fingerJoints = {
     thumb: [0, 1, 2, 3, 4],
@@ -6,6 +26,7 @@ const fingerJoints = {
     ringFinger: [0, 13, 14, 15, 16],
     pinky: [0, 17, 18, 19, 20],
   };
+  
   
   // Infinity Gauntlet Style
   const style = {
@@ -36,6 +57,7 @@ const fingerJoints = {
   export const drawHand = (predictions, ctx) => {
     // Check if we have predictions
     if (predictions.length > 0) {
+
       // Loop through each prediction
       predictions.forEach((prediction) => {
         // Grab landmarks

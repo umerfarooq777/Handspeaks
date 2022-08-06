@@ -1,8 +1,11 @@
 .webcam{
-  position: absolute;
-  height: 80%;
-  margin: 2rem auto 0 auto;
-  width: auto;
+  /* position: relative; */
+  /* top: 2rem;  
+  left: 0; */
+  z-index: 4;
+  height: 100%;
+  width: 100%;
+  margin: 4rem auto 0 auto;
   /* border: 3px dashed rgb(3, 207, 54); */
 }
 .mode-1{
@@ -14,30 +17,70 @@
 
 .canvas{
   position: absolute;
+  top: 0;
+  /* left: 0; */
   z-index: 5;
-  height:82%;
-  margin: 2rem auto 0 auto;
-  width: auto;
+  height:88%;
+  width: 100%;
+  margin: 4rem auto 0 auto;
   /* border: 3px solid rgb(214, 57, 9); */
 }
 
 .container{
-  width: 90%;
+  position: relative;
+  width: auto;
   height: auto;
   margin: 0 auto;
+  border: 3px solid rgb(255, 251, 0);
+  background: #333;
+  
   display: flex;
   align-items: center;
   justify-content: center;
-  background: pink;
 }
 .heading{
-  
+  width: 100%;
   position: absolute;
-  top: 1rem;
+  text-align: center;
+  top: .5rem;
+  left: 0;
   margin: 0 auto;
   z-index: 6;
   color: aliceblue;
 }
+.App{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+body{
+  
+  background: rgb(22, 22, 22)!important;
+}
+
+
+
+
+
+/* ============================ MEDIA QUERIES (SMALL DEVICES) ================================== */
+@media screen and (max-width: 400px) {
+  .webcam{
+    /* position: absolute; */
+    /* height: 80%;
+    width: auto;
+    margin: 2rem auto 0 auto; */
+    /* border: 3px dashed rgb(3, 207, 54); */
+  }
+  .canvas{
+    /* position: absolute;
+    z-index: 5;
+    height:82%;
+    width: auto;
+    margin: 2rem auto 0 auto; */
+    /* border: 3px solid rgb(214, 57, 9); */
+  }
+  }
 
 
 
@@ -57,12 +100,7 @@
 
 
 
-
-
-
-
-
-
+/* 
 .App {
   text-align: center;
 }
@@ -87,4 +125,4 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
