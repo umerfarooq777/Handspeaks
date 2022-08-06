@@ -63,24 +63,7 @@ body{
 
 
 
-/* ============================ MEDIA QUERIES (SMALL DEVICES) ================================== */
-@media screen and (max-width: 400px) {
-  .webcam{
-    /* position: absolute; */
-    /* height: 80%;
-    width: auto;
-    margin: 2rem auto 0 auto; */
-    /* border: 3px dashed rgb(3, 207, 54); */
-  }
-  .canvas{
-    /* position: absolute;
-    z-index: 5;
-    height:82%;
-    width: auto;
-    margin: 2rem auto 0 auto; */
-    /* border: 3px solid rgb(214, 57, 9); */
-  }
-  }
+
 
 
 
