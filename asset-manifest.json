@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Handspeaks/client/static/css/main.d40a6d95.css",
+    "main.js": "/Handspeaks/client/static/js/main.b989dc14.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/Handspeaks/client/static/js/787.c4e7f8f9.chunk.js",
+    "index.html": "/Handspeaks/client/index.html",
+    "main.d40a6d95.css.map": "/Handspeaks/client/static/css/main.d40a6d95.css.map",
+    "main.b989dc14.js.map": "/Handspeaks/client/static/js/main.b989dc14.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/Handspeaks/client/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d40a6d95.css",
+    "static/js/main.b989dc14.js"
+  ]
+}
